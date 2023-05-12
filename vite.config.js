@@ -13,6 +13,9 @@ export default defineConfig({
     UnoCSS(),
     Components(),
     AutoImport({
+      eslintrc: {
+        enabled: true, // <-- this
+      },
       imports: [
         // presets
         'vue',

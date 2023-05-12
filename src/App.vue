@@ -7,7 +7,7 @@ const tabs = [
 ]
 
 const selectedModel = ref('')
-const modelProps = ref({})
+const modelProps = ref([])
 const selectedType = ref({})
 let header = ref()
 let offsetTop = ref()

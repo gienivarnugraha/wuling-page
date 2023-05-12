@@ -6,11 +6,11 @@
             <section>
                 Section 1
             </section>
-            <div class="divider bg-neutral"></div>
+            <div class="v-divider bg-neutral"></div>
             <section >
                 Section 2
             </section>
-            <div class="divider bg-neutral"></div>
+            <div class="v-divider bg-neutral"></div>
             <section>
                 Section 3
             </section>

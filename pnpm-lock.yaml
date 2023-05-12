@@ -12,6 +12,7 @@ specifiers:
   '@vue/eslint-config-prettier': ^7.1.0
   eslint: ^8.39.0
   eslint-plugin-vue: ^9.11.0
+  lodash: ^4.17.21
   pinia: ^2.0.35
   prettier: ^2.8.8
   unocss: ^0.51.12
@@ -44,6 +45,7 @@ devDependencies:
   '@vue/eslint-config-prettier': 7.1.0_aq37wtubambsjkbuajxtwljxa4
   eslint: 8.40.0
   eslint-plugin-vue: 9.11.1_eslint@8.40.0
+  lodash: 4.17.21
   prettier: 2.8.8
   unocss: 0.51.12_vite@4.3.5
   vite: 4.3.5

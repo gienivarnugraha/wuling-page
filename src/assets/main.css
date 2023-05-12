@@ -38,8 +38,12 @@ nav a:first-of-type {
   border: 0;
 }
 
-.divider{
+.v-divider{
   @apply inline-block min-h-[1em] w-0.25 self-stretch opacity-100 mx-2;
+}
+
+.h-divider{
+  @apply min-v-[1em] h-0.25 self-stretch opacity-100 my-2;
 }
 
 
