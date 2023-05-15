@@ -52,76 +52,82 @@ const onSlideChange = (data) => {
 
     <div class="mb-8"></div>
 
-    <div :key="currentIndex" v-if="clone.length > 0">
-        <div
-            class="w-full min-h-[15rem] rounded border-(gray-500 opacity-75) rounded-xl p-8 bg-(gray-200 opacity-75) transition-500 flex flex-col text-left ">
-            <div class="mb-4">
-                <p class="inline-block px-2 py-1 text-xs bg-slate-400 mb-1 font-regular text-white uppercase">
-                    {{ modelType }} </p>
-                <p class="text-sky-800 text-2xl font-semibold"> {{ clone[currentIndex].name }} </p>
-            </div>
 
-
-            <div class="carousel-text h-full">
-
-                <div class="flex-1">
-                    <p class="text-xs">Harga Mulai </p>
-                    <p class="text-red text-xl font-semibold"> Rp. {{ clone[currentIndex].price }} ,- </p>
-
+    <Transition mode="out-in" name="fade">
+        <div :key="currentIndex" v-if="clone.length > 0">
+            <div
+                class="w-full min-h-[15rem] rounded border-(gray-500 opacity-75) rounded-xl p-8 bg-(gray-200 opacity-75) transition-500 flex flex-col text-left ">
+                <div class="mb-4">
+                    <p class="inline-block px-2 py-1 text-xs bg-slate-400 mb-1 font-regular text-white uppercase">
+                        {{ modelType }} </p>
+                    <p class="text-sky-800 text-2xl font-semibold"> {{ clone[currentIndex].name }} </p>
                 </div>
 
-                <div class="bg-slate-300" :class="dividerClass"></div>
 
-                <div class="flex-1">
-                    <p class="text-xs">Spesifikasi:</p>
-                    <ul>
-                        <li class="text-xs" v-for="(spec, specIndex) in clone[currentIndex].specs" :key="specIndex">{{ spec
-                        }}
-                        </li>
-                    </ul>
-                </div>
+                <div class="carousel-text h-full">
 
-                <div class="bg-slate-300" :class="dividerClass"></div>
+                    <div class="flex-1">
+                        <p class="text-xs">Harga Mulai </p>
+                        <p class="text-red text-xl font-semibold"> Rp. {{ clone[currentIndex].price }} ,- </p>
 
-                <div class="flex-1 align-center justify-center">
-                    <div v-if="clone[currentIndex].variants">
-                        <p class="text-xs">Variant:</p>
-                        <div class="text-center py-2 align-center">
-                            <div v-for="(variant, variantIndex) in clone[currentIndex].variants" :key="variantIndex"
-                                class="inline-block mr-2">
-                                <button class=" rounded-full w-4 h-4 border-none mr-2 cursor-pointer hover:scale-125 "
-                                    :class="{ 'scale-150': variant.href === clone[currentIndex].img }"
-                                    :style="{ 'background-color': variant.color }"
-                                    @click="clone[currentIndex].img = variant.href">
-                                </button>
-                                <p class="text-xs"> {{ variant.name }} </p>
+                    </div>
+
+                    <div class="bg-slate-300" :class="dividerClass"></div>
+
+                    <div class="flex-1">
+                        <p class="text-xs">Spesifikasi:</p>
+                        <ul>
+                            <li class="text-xs" v-for="(spec, specIndex) in clone[currentIndex].specs" :key="specIndex">{{
+                                spec
+                            }}
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-300" :class="dividerClass"></div>
+
+                    <div class="flex-1 align-center justify-center">
+                        <div v-if="clone[currentIndex].variants">
+                            <p class="text-xs">Variant:</p>
+                            <div class="text-center py-2 align-center">
+                                <div v-for="(variant, variantIndex) in clone[currentIndex].variants" :key="variantIndex"
+                                    class="inline-block mr-2">
+                                    <button class=" rounded-full w-4 h-4 border-none mr-2 cursor-pointer hover:scale-125 "
+                                        :class="{ 'scale-150': variant.href === clone[currentIndex].img }"
+                                        :style="{ 'background-color': variant.color }"
+                                        @click="clone[currentIndex].img = variant.href">
+                                    </button>
+                                    <p class="text-xs"> {{ variant.name }} </p>
 
 
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="mt-4 flex justify-center">
-                        <button
-                            class="p-2 w-full rounded-lg bg-gradient-to-r from-teal-500 via-blue-500 to-sky-500 animate-gradient-x border-none">
-                            <div class="flex align-center justify-center">
-                                <span class="inline-block i-mdi i-mdi-home text-2xl text-indigo-800 mr-2 text-white"></span>
-                                <span
-                                    class="uppercase text-base md:text-md text-white font-sans font-semibold tracking-wide">
-                                    pesan sekarang</span>
+                        <div class="mt-4 flex justify-center">
+                            <button
+                                class="p-2 w-full rounded-lg bg-gradient-to-r from-teal-500 via-blue-500 to-sky-500 animate-gradient-x border-none">
+                                <div class="flex align-center justify-center">
+                                    <span
+                                        class="inline-block i-mdi i-mdi-home text-2xl text-indigo-800 mr-2 text-white"></span>
+                                    <span
+                                        class="uppercase text-base md:text-md text-white font-sans font-semibold tracking-wide">
+                                        pesan sekarang</span>
 
-                            </div>
-                        </button>
+                                </div>
+                            </button>
 
+                        </div>
                     </div>
                 </div>
+
             </div>
+
+
 
         </div>
 
-
-
-    </div>
+    </Transition>
 </template>
 
 

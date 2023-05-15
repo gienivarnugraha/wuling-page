@@ -2,13 +2,11 @@
   <div v-if="useBreakpoint().is === 'smUp'" class="tab-pills">
     <ul class="flex flex-wrap -mb-px text-center list-none pl-0">
       <li class="mr-1 grow-1" v-for="(tab, index) in tabs" :key="index">
-        <button
-          class="tab-button"
-          :class="{ 'active': activeTab === tab }" @click="changeTab(tab)">
+        <button class="tab-button" :class="{ 'active': activeTab === tab }" @click="changeTab(tab)">
           <span class="
-          text-sm font-sans font-medium uppercase transition-500
-          md:text-md
-          ">
+            text-sm font-sans font-medium uppercase transition-500
+            md:text-md
+            ">
             {{ tab }}
           </span>
         </button>
@@ -20,10 +18,12 @@
       <option v-for="(tab, index) in tabs" :key="index" :value="tab"> {{ tab }} </option>
     </select>
   </div>
-  <div class="tab-content" :key="activeTab">
-    <slot :name="activeTab"></slot>
-    <slot ></slot>
-  </div>
+  <Transition name="fade" mode="out-in">
+    <div class="tab-content" :key="activeTab">
+      <slot :name="activeTab"></slot>
+      <slot></slot>
+    </div>
+  </Transition>
 </template>
 
 <script setup>
@@ -67,15 +67,15 @@ const changeTab = (tab) => {
   @apply border-(b-sky b-4) text-sky font-bold transition-500 -translate-y-1;
 }
 
-.tab-button.active > span {
-  @apply text-sky font-bold ;
+.tab-button.active>span {
+  @apply text-sky font-bold;
 }
 
-.tab-button{
-  @apply inline-block w-full p-2 border-b-2 font-medium border-transparent rounded-t-lg hover:(text-gray-600 border-b-gray-100);
+.tab-button {
+  @apply inline-block w-full p-2 border-b-2 font-medium border-transparent rounded-t-lg hover: (text-gray-600 border-b-gray-100);
 }
 
-.tab-pills{
+.tab-pills {
   @apply mb-4 border-b border-gray-200 bg-transparent px-4;
 }
 
@@ -84,6 +84,6 @@ const changeTab = (tab) => {
 }
 
 .select {
-  @apply inline-block w-full p-2 border-(b-sky-800 b-2 t-none l-none r-none) font-medium rounded-sm hover:(text-gray-600 border-b-gray-100);
+  @apply inline-block w-full p-2 border-(b-sky-800 b-2 t-none l-none r-none) font-medium rounded-sm hover: (text-gray-600 border-b-gray-100);
 }
 </style>

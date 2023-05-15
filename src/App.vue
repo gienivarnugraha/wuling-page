@@ -117,7 +117,7 @@ const fixedOnScroll = () => {
       </div>
 
       <tab-headers :tabs="tabs" v-model="selectedModel">
-        <CarSection :key="selectedModel" :model="modelProps" :model-type="selectedModel" @slide-change="onSlideChange" />
+          <CarSection :key="selectedModel" :model="modelProps" :model-type="selectedModel" @slide-change="onSlideChange" />
       </tab-headers>
 
 
